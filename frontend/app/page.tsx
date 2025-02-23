@@ -14,7 +14,7 @@ interface FileRecord {
 
 const backendUrl =
   process.env.NEXT_PUBLIC_BACKEND_URL ||
-  'tender-energy-production.up.railway.app';
+  'https://tender-energy-production.up.railway.app';
 
 export default function DFSPage() {
   const [fileList, setFileList] = useState<FileRecord[]>([]);

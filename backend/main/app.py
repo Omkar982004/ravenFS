@@ -230,6 +230,16 @@ def delete_file():
         'delete_results': delete_results
     }), 200
 
+@app.route('/list', methods=['GET'])
+def list_files():
+    try:
+        resp = requests.get(f"{METADATA_URL}/files", timeout=60)
+        resp.raise_for_status()
+        return jsonify(resp.json())
+    except Exception as e:
+        return jsonify({'error': f"Error fetching file list from metadata service: {e}"}), 500
+
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print("Starting main DFS gateway on port", port)
