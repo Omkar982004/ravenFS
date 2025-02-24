@@ -12,7 +12,7 @@ CORS(app)
 # Set the metadata service URL to your provided URL.
 METADATA_URL = os.getenv("METADATA_URL", "https://ravenfs-production.up.railway.app")
 # STORAGE_NODES should be a comma-separated list of storage node URLs.
-storage_nodes_str = os.getenv("STORAGE_NODES", "celebrated-radiance-production.up.railway.app,celebrated-radiance-copy-production.up.railway.app,celebrated-radiance-copy-1-production.up.railway.app")
+storage_nodes_str = os.getenv("STORAGE_NODES", "https://celebrated-radiance-production.up.railway.app,https://celebrated-radiance-copy-production.up.railway.app,https://celebrated-radiance-copy-1-production.up.railway.app")
 STORAGE_NODES = [node.strip() for node in storage_nodes_str.split(",") if node.strip()]
 
 # Use 4 MB chunks
